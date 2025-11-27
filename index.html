@@ -3,12 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <title>Redirecting...</title>
-  <!-- 方式1：meta刷新，0秒后跳转 -->
-  <meta http-equiv="refresh" content="0;url=http://176.16.55.16">
-  
+
+  <!-- 方式1：meta刷新，0秒后跳转（注意 0; 后面有空格） -->
+  <meta http-equiv="refresh" content="0; url=http://176.16.55.16">
 </head>
 <body>
   <p>Redirecting to internal server...</p>
+
+  <!-- 方式2：JS 跳转，绝大部分浏览器都支持 -->
+  <script>
+    // 如果 meta 被禁用，这里仍然会跳转
+    window.location.href = "http://176.16.55.16";
+    // 或者用 replace，不留当前页面在历史记录里：
+    // window.location.replace("http://176.16.55.16");
+  </script>
 </body>
 </html>
-
